@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive blog application built with HTML, CSS and JavaScript.">
+  <title>BlogSpace — Share your story</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" data-page="home"><span class="brand-mark">B</span> BlogSpace</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <button class="nav-link active" data-page="home">Home</button>
+      <button class="nav-link" data-page="dashboard">Dashboard</button>
+      <button class="nav-link" data-page="create">Write a blog</button>
+    </nav>
+    <div class="nav-actions" id="navActions">
+      <button class="btn btn-ghost" data-page="login">Log in</button>
+      <button class="btn btn-primary" data-page="register">Get started</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="page active" id="home">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">A PLACE FOR YOUR IDEAS</span>
+          <h1>Every story<br><em>deserves</em> to be read.</h1>
+          <p>Discover fresh perspectives, share what you know, and turn your thoughts into stories people love.</p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-large" data-page="register">Start writing <span>→</span></button>
+            <button class="btn btn-ghost btn-large" data-page="dashboard">Explore blogs</button>
+          </div>
+          <div class="hero-note"><span class="avatar-stack"><i>J</i><i>M</i><i>A</i></span><span>Made for curious minds and storytellers.</span></div>
+        </div>
+        <div class="hero-art">
+          <div class="art-card art-card-back"><span>IDEAS</span><div class="art-lines"></div></div>
+          <div class="art-card art-card-front"><div class="art-image"></div><div class="art-meta">FEATURED STORY</div><h3>The little things that make a big difference</h3><p>By Alex Morgan · 5 min read</p></div>
+          <div class="art-sticker">✦<small>YOUR<br>VOICE<br>MATTERS</small></div>
+        </div>
+      </div>
+      <section class="content-section">
+        <div class="section-heading"><div><span class="eyebrow">THE COMMUNITY</span><h2>Stories worth your time</h2></div><button class="text-button" data-page="dashboard">View all stories →</button></div>
+        <div class="blog-grid" id="homeBlogs"></div>
+      </section>
+    </section>
+
+    <section class="page auth-page" id="login">
+      <div class="auth-card"><span class="eyebrow">WELCOME BACK</span><h2>Log in to BlogSpace</h2><p class="muted">Your next great idea is waiting.</p>
+        <form id="loginForm"><label>Email address<input type="email" id="loginEmail" placeholder="you@example.com" required></label><label>Password<input type="password" id="loginPassword" placeholder="Enter your password" required minlength="4"></label><button class="btn btn-primary btn-full">Log in</button></form>
+        <p class="auth-switch">New to BlogSpace? <button class="inline-button" data-page="register">Create an account</button></p>
+        <p class="form-message" id="loginMessage" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="page auth-page" id="register">
+      <div class="auth-card"><span class="eyebrow">JOIN THE COMMUNITY</span><h2>Create your account</h2><p class="muted">A few details and you’re ready to write.</p>
+        <form id="registerForm"><label>Your name<input type="text" id="registerName" placeholder="Alex Morgan" required></label><label>Email address<input type="email" id="registerEmail" placeholder="you@example.com" required></label><label>Password<input type="password" id="registerPassword" placeholder="At least 4 characters" required minlength="4"></label><button class="btn btn-primary btn-full">Create account</button></form>
+        <p class="auth-switch">Already have an account? <button class="inline-button" data-page="login">Log in</button></p>
+        <p class="form-message" id="registerMessage" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="page content-page" id="dashboard">
+      <div class="page-intro"><span class="eyebrow">YOUR READING SPACE</span><h1>Explore stories</h1><p>Find ideas, inspiration, and new perspectives from the community.</p></div>
+      <div class="toolbar"><input id="searchBlogs" type="search" placeholder="Search stories or authors…" aria-label="Search blogs"><span id="blogCount" class="muted"></span></div>
+      <div class="blog-grid" id="allBlogs"></div>
+    </section>
+
+    <section class="page content-page" id="create">
+      <div class="page-intro"><span class="eyebrow">MAKE SOMETHING MEANINGFUL</span><h1>Write your story</h1><p>Share an idea, a lesson, or something you can’t stop thinking about.</p></div>
+      <div class="editor-card"><form id="blogForm"><label>Blog title<input id="blogTitle" type="text" maxlength="90" placeholder="Give your story a great title" required></label><label>Category<select id="blogCategory"><option>Technology</option><option>Education</option><option>Life</option><option>Creativity</option><option>Career</option></select></label><label>Your story<textarea id="blogBody" rows="9" placeholder="Start writing here…" required minlength="20"></textarea></label><div class="editor-footer"><span class="muted">Your post will appear in the dashboard.</span><button class="btn btn-primary">Publish story →</button></div></form><p class="form-message" id="blogMessage" aria-live="polite"></p></div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#" data-page="home"><span class="brand-mark">B</span> BlogSpace</a><span>Made with curiosity. © <span id="year"></span> BlogSpace</span></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>

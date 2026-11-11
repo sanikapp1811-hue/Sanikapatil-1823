@@ -1,0 +1,17 @@
+🚀 Excited to share my Module 01 project: BlogSpace – Frontend Blog Application!
+
+As part of my Frontend Development learning journey, I built a responsive blog application using HTML, CSS, and JavaScript.
+
+✨ Key features:
+• Home page
+• Login and Registration pages
+• Dashboard to explore blogs
+• Create and publish blog posts
+• Search functionality
+• Responsive design for mobile and desktop
+
+This project helped me strengthen my understanding of frontend development, UI design, JavaScript functionality, and browser localStorage.
+
+I’m looking forward to learning more and building better projects!
+
+#FrontendDevelopment #HTML #CSS #JavaScript #WebDevelopment #LearningByDoing #BlogApplication #CODOMAXDIGITAL
